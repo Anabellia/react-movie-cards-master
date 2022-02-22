@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import MovieContext from '../../store/addMovie-context';
 import useInput from '../../hooks/form-input';
 
 const AddMovies = () => {
+  const movieCtx = useContext(MovieContext);
+
   const {
     value: enteredTitle,
     isValid: titleIsValid,
@@ -47,7 +50,18 @@ const AddMovies = () => {
   const submitHandler = event => {
     event.preventDefault();
 
-    console.log(enteredTitle);
+    const movie = {
+      id: Math.floor(Math.random() * 150),
+      title: enteredTitle,
+      subtitle: enteredSubtitle,
+      description: enteredDesc,
+      year: '2005',
+      imageUrl: enteredImage,
+      rating: 0,
+    };
+
+    movieCtx.onAddMovie(movie);
+
     resetTitleInput();
     resetSubtitleInput();
     resetImageInput();

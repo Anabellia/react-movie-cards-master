@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 
 import MovieList from './MovieList';
 import MovieService from '../../services/MovieService';
+import MovieContext from '../../store/addMovie-context';
 
 const Movies = () => {
+  const ctxMovies = useContext(MovieContext);
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    setMovies(MovieService.getMovies());
-  }, []);
+    setMovies(ctxMovies.movies);
+  }, [ctxMovies.movies]);
 
   return (
     <div className="container-fluid" style={{ marginLeft: '-15px' }}>
@@ -19,6 +21,6 @@ const Movies = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Movies;
