@@ -1,0 +1,11 @@
+.form {
+    margin: 25px;
+}
+
+.form__input {
+    margin: 7px 20px;
+}
+
+.form__input.invalid {
+    background-color: rgb(245, 217, 217);
+}
