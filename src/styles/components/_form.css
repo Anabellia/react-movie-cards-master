@@ -9,3 +9,10 @@
 .form__input.invalid {
     background-color: rgb(245, 217, 217);
 }
+
+.btn.login {
+    border-color: gray;
+    background-color: #212529;
+    color: #fff;
+}
+

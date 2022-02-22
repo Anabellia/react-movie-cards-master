@@ -14,6 +14,9 @@ const MovieCard = props => {
           <p className="text-justify" style={{ fontSize: '14px' }}>
             {props.movie.description}
           </p>
+          <button className="btn" onClick={props.onRemove}>
+            Delete movie
+          </button>
         </div>
         <div className="card-footer">
           <div className="clearfix">

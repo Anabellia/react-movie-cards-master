@@ -10,10 +10,20 @@ const MovieProvider = props => {
     setNewMoviesList(oldMovies => {
       return [movie, ...oldMovies];
     });
-    console.log(newMoviesList);
+  };
+
+  const removeMovieHandler = id => {
+    const existingMovieIndex = newMoviesList.findIndex(item => item.id === id);
+    const existingItem = newMoviesList[existingMovieIndex];
+
+    let updatedMovies;
+    if (existingItem !== null) {
+      updatedMovies = newMoviesList.filter(item => item.id !== id);
+      setNewMoviesList(updatedMovies);
+    }
   };
   return (
-    <MovieContext.Provider value={{ movies: newMoviesList, onAddMovie: addMovieHandler }}>
+    <MovieContext.Provider value={{ movies: newMoviesList, onAddMovie: addMovieHandler, onRemove: removeMovieHandler }}>
       {props.children}
     </MovieContext.Provider>
   );

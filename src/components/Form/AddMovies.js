@@ -122,7 +122,7 @@ const AddMovies = () => {
           value={enteredDesc}
         />
       </div>
-      <button disabled={!formIsValid} className="btn">
+      <button disabled={!formIsValid} className="btn login">
         Add Movie
       </button>
     </form>
