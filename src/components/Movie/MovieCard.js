@@ -23,6 +23,7 @@ const MovieCard = props => {
             <div className="float-left mt-1">
               <StarRating rating={props.movie.rating} />
             </div>
+
             <div className="card-footer-badge float-right badge badge-primary badge-pill">{props.movie.rating}</div>
           </div>
         </div>

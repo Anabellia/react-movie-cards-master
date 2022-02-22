@@ -121,6 +121,7 @@ const AddMovies = () => {
           onBlur={descBlurHandler}
           value={enteredDesc}
         />
+        {descIsInvalid && <span>Description is empty</span>}
       </div>
       <button disabled={!formIsValid} className="btn login">
         Add Movie
